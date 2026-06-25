@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 15% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 15% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 263 80% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 280 80% 70%;
+
+    --secondary: 240 10% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 330 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --warning: 38 92% 50%;
+
+    --border: 240 10% 18%;
+    --input: 240 15% 12%;
+    --ring: 263 80% 65%;
+
+    --radius: 0.875rem;
+
+    --gradient-brand: linear-gradient(135deg, hsl(263 80% 65%) 0%, hsl(330 80% 60%) 100%);
+    --gradient-bg: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(250 30% 12%) 100%);
+    --gradient-radial: radial-gradient(circle at 30% 50%, hsl(263 50% 25%) 0%, hsl(240 10% 4%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240 15% 10%) 0%, hsl(240 15% 8%) 100%);
+
+    --shadow-glow: 0 10px 30px -5px hsl(263 80% 65% / 0.4);
+    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+  }
+
+  .dark { color-scheme: dark; }
+
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .gradient-brand { background: var(--gradient-brand); }
+  .gradient-radial { background: var(--gradient-radial); }
+  .gradient-card { background: var(--gradient-card); }
+  .text-gradient {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass {
+    background: hsl(0 0% 100% / 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+}
